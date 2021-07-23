@@ -15,7 +15,7 @@ switch(sexo){
 
   case 'F':
     console.log("Feminino")
-    break:
+    break;
 
 }
 
