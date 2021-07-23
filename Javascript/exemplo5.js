@@ -1,21 +1,19 @@
 let idade = 18
 
-if ( idade >=18){
-  console.log("Maior de idade:")
-}else{
-  console.log("Menor de idade:")
+if (idade >= 18) {
+  console.log('Maior de idade:')
+} else {
+  console.log('Menor de idade:')
 }
 
 let sexo = 'M'
 
-switch(sexo){
+switch (sexo) {
   case 'M':
-    console.log("Masculino")
-    break;
+    console.log('Masculino')
+    break
 
   case 'F':
-    console.log("Feminino")
-    break:
-
+    console.log('Feminino')
+    break;
 }
-
