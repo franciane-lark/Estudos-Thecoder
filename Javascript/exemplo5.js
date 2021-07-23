@@ -6,12 +6,12 @@ if (idade >= 18) {
   console.log('Menor de idade:')
 }
 
-let sexo = 'M'
+let sexo = 'F'
 
 switch (sexo) {
   case 'M':
     console.log('Masculino')
-    break
+    break;
 
   case 'F':
     console.log('Feminino')
