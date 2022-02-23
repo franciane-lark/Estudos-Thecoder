@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Informe seus dados</h1>
+    <label for="nome">Seu nome</label>
+    <input type="text" name="nome" id="nome">
+    <br><br>
+    <label for="sobrenome">Seu sobrenome</label>
+    <input type="text" name="sobrenome" id="sobrenome">
+    <br><br>
+    <!-- <input type="button" value="Enviar" id="btnEnviar" onclick="enviarDados()"> -->
+    <input type="button" value="Enviar" id="btnEnviar">
+
+    <script>
+        function enviarDados(){
+            //buscar o valor digitado no campo nome e sobrenome
+            let nome = document.getElementById("nome")
+            let sobrenome = document.getElementById("sobrenome")
+
+            if(nome.value == "" || sobrenome.value == ""){
+                alert("Preencha todos os campos")
+            }else{
+                let sejaBemVindo = `Seja bem vindo ao site ${nome.value} ${sobrenome.value}`
+                alert(sejaBemVindo)
+            }
+        }
+        //document.getElementById("btnEnviar").onclick = enviarDados;
+        document.getElementById("btnEnviar").addEventListener("click", enviarDados);
+    </script>
+</body>
+</html>
