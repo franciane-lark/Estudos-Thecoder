@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <h1>Informe os dados</h1>
+   <label for="estado">Informe seu estado</label>
+   <select name="estado" id="estado">
+       <option value="">--Selecione</option>
+       <option value="RJ">RJ</option>
+       <option value="SP">SP</option>
+       <option value="ES">ES</option>
+       <option value="MG">MG</option>
+   </select>
+   <script>
+       document.getElementById("estado").addEventListener('change', (event)=>{
+            console.log(event)
+            let valor = event.target.value
+
+            if( valor = ""){
+                //target implentar a instância style.
+                event.target.style.border = "1px solid #F00"
+                alert("Estado é obrigatório")
+                return
+            }
+            event.target.style.border = "1px solid #F00"
+            alert("Estado escolhido foi " + valor)
+            
+       })
+   </script>
+</body>
+</html>
