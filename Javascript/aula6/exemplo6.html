@@ -5,17 +5,45 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        #result {
+            width: 50px;
+            height: 50px;
+            margin-left: 10px;
+            background-color: #F00;
+            position: relative;
+        }
+    </style>
 </head>
 <body>
     Informe seu nome:
     <input type="text" name="" id="nome">
     <br>
+    <a href="">VOLTAR</a>
+    <div id="result"></div>
     <script>
         document.getElementById("nome").addEventListener("keyup", event => {
             console.log("KEYUP", event.keyCode, "---", event.target.value)
         })
+
         document.getElementById("nome").addEventListener("keydown", event => {
             console.log("KEYDOWN", event.keyCode, "---", event.target.value)
+        })
+
+        document.getElementById("nome").addEventListener("focus", event=> {
+            console.log("Entrou no campos")
+            event.target.value = ""
+        })
+
+        document.querySelector("a").addEventListener("click", event=> {
+            document.getElementById("result").style.marginLeft
+        })
+
+        document.getElementById("result").addEventListener("mouseover", event=> {
+            let margin = event.target.style.marginLeft
+            margin = margin.replace("px", "")
+            if (margin == "") margin = 0
+            event.target.style.marginLeft = (partInt(margin) + 50 ) +'px'
         })
     </script>
 </body>
