@@ -17,15 +17,22 @@
 
             let regex = new RegExp("\\d")
             if(!regex.test(key)){
-                alert("Valor informado não é válido")
+                //alert("Valor informado não é válido")
                 event.preventDefault()
                 return;
             }
+            
 
             let value = event.target.value
             let valueOnlyNumber = value.replace(/\D/gi,"")
             let tamString = valueOnlyNumber.length
 
+            //buscar o ultimo caracter da minha string
+            let lastString = value.substr(-1)
+            console.log(lastString)
+            if(lastString == "." || lastString =="-") return;
+
+            
             if(tamString == 3 || tamString == 6){
                 event.target.value = event.target.value + "."
             }else if(tamString == 9){
