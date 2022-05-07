@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Pagina criada para manipular eventos</p>
+    <input type="text" id="campo">
+    <script>
+        /*
+        click -- Evento click
+        dbclick -- Evento 2x clique
+        mousemove - movimenta o mouse sobre o elemento
+        mousedown -- Evento clique
+
+        keywdown -- antes da teclar ir para o campo
+        keypress -- no momento do press da tecla
+        keyup -- pos tecla ir para o campo
+
+        reset -- ao cancelar o formulário
+        submit -- ao disparar formulário
+
+        focus -- ao entrar no campo
+        blur --  ao sair do campo
+        */
+        document.getElementsByTagName("p")[0].addEventListener("mousemove", (event) => {
+            console.log(event)
+            alert("Evento disparado")
+        })
+
+        document.getElementById("campo").addEventListener("focus", (event) =>{
+            //alert("Evento campo executado")
+            event.target.value = "campo com focus"
+        })
+
+        document.getElementById("campo").addEventListener("blur", (event) =>{
+            //alert("Evento campo executado")
+            event.target.value = " saiu do campo"
+        })
+    </script>
+</body>
+</html>
