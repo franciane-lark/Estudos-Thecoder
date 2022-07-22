@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="iniciar">Iniciar</button>
+    <button id="parar">Parar</button>
+    <div id="resp">
+
+    </div>
+    <script>
+        let contagem;
+        document.getElementById("iniciar").addEventListener("click", function(){
+            let time = 0
+            contagem = setInterval(() => {
+                time++;
+                document.getElementById("resp").innerHTML = "Contagem de segundos em " + time;
+            }, 1000)
+
+            setTimeout (() => {
+                alert("Parabéns, você chegou até aqui")
+            },10000)
+        })
+        document.getElementById("parar").addEventListener("click", function(){
+            clearInterval(contagem)
+        })
+    </script>
+</body>
+</html>
