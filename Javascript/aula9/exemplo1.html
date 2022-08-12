@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="formnome">
+        Informe o seu nome:
+        <input type="text" name="nome" id="nome">
+    </div> 
+    <div id="bemvindo"></div>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            let nome = localStorage.getItem("dbnome")
+            if(nome != null){
+                document.getElementById("bemvindo").innerHTML = `${nome}, seja bem vindo`
+                document.getElementsByClassName("fornome")[0].style.display = `none`
+            }
+        })
+
+        document.getElementById("nome").addEventListener("blur",(event) => {
+            let valor= event.target.value
+            //Gravar um valor no localstorage
+            localStorage.setItem("dbnome", valor)
+            document.getElementById("bemvindo").innerHTML = `${valor}, seja bem vindo`
+        })
+    </script> 
+</body>
+</html>
